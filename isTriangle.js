@@ -8,6 +8,15 @@ function calculateSumOfAngles(angle1,angle2,angle3) {
 }
 
 function isTriangle() {
+    if (
+        inputs[0].value.length === 0 || inputs[1].value.length === 0 || inputs[2].value.length === 0) {
+        outputEl.innerText = "Please Enter all the fields";
+        return;
+    }
+    if (Number(inputs[0].value) <= 0 || Number(inputs[1].value) <= 0 || Number(inputs[2].value) <= 0) {
+        outputEl.innerText = "Invalid Data Entered";
+        return;
+    }
     const sumOfAngles = calculateSumOfAngles(Number(inputs[0].value),Number(inputs[1].value),Number(inputs[2].value));
     if(sumOfAngles === 180)
     {

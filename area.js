@@ -4,6 +4,10 @@ const output = document.querySelector("#output");
 const area_btn = document.querySelector("#area-btn");
 
 function calculateArea() {
+  if (base.value.length === 0 || height.value.length === 0) {
+    output.innerText = "Empty fields are not allowed!";
+    return;
+  }
   if (Number(base.value) <= 0 || Number(height.value) <= 0) {
     output.innerText = "Invalid data entred";
     return;
